@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+
+    <div class="navbar">
+        <ul>
+            <li><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">Gmail</a></li>
+            <li><a href="https://www.google.co.id/imghp?hl=en&tab=ri&ogbl">Images</a></li>
+            <li><a href=""><i class='bx bxs-grid' style="font-size: 25px;"></i></a></li>
+            <li>
+                <div class="gambar"><img src="profile.jpg" alt="profile"></div>
+            </li>
+        </ul>
+        <div class="profile"></div>
+    </div>
+
+    <div class="box">
+        <img src="logo.png">
+        <div class="form-container">
+            <form action="">
+                <div class="field">
+                    <i class='bx bx-search'></i>
+                    <input type="text" id="fname" name="firstname" placeholder="search">
+                    <a href=""><i class='bx bxs-microphone' ></i></a>
+                </div>
+            </form>
+        </div>
+
+        <div class="app">
+            <a href="https://www.youtube.com/">
+                <div class="apa">
+                    <div class="gambar"></div>
+                    <p>Youtube</p>
+                </div>
+            </a>
+            <a href="">
+                <div class="apa">
+                    <div class="gambar"></div>
+                    <p>Youtube</p>
+                </div>
+            </a>
+            <a href="">
+                <div class="apa">
+                    <div class="gambar"></div>
+                    <p>Youtube</p>
+                </div>
+            </a>
+            <a href="">
+                <div class="apa">
+                    <div class="gambar"></div>
+                    <p>Instagram</p>
+                </div>
+            </a>
+            <a href="">
+                <div class="apa">
+                    <div class="gambar"></div>
+                    <p>Instagram</p>
+                </div>
+            </a>
+            <a href="">
+                <div class="apa">
+                    <div class="gambar"></div>
+                    <p>Instagram</p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        let klik = document.querySelector('.profile');
+        klik.onclick = function() {
+            klik.classList.toggle('active')
+        }
+    </script>
+
+</body>
+
+</html>
