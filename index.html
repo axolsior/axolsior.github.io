@@ -179,12 +179,12 @@
                 let size = Math.random() * 5;
                 let posX = Math.floor(Math.random() * window.innerWidth);
                 let delay = Math.random() * -20;
-                // let duration = Math.random(50) * 100;
+                let duration = Math.random() * 50;
 
                 drop.style.width = 10 + 'px';
                 drop.style.left = posX + 'px';
                 drop.style.animationDelay = delay + 's';
-                drop.style.animationDuration = 30 + 's';
+                drop.style.animationDuration = 10 + duration + 's';
                 body.appendChild(drop);
                 i++
             }
