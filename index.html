@@ -29,14 +29,11 @@
         overflow: hidden;
     }
     /*===== snow =====*/
-    /* .snow {
-        border: solid;
-    } */
     
     i {
         position: absolute;
         background: white;
-        height: 30px;
+        height: 10px;
         border-radius: 50%;
         top: 0px;
         animation: snow 10s linear infinite;
@@ -46,7 +43,7 @@
     
     @keyframes snow {
         0% {
-            transform: translateY(-200px);
+            transform: translateY(-100px);
         }
         100% {
             transform: translateY(calc(100vh + 200px));
@@ -98,6 +95,8 @@
         align-items: center;
         justify-content: space-between;
         padding: 50px 310px;
+        background: #82ADC6;
+        z-index: 1;
     }
     
     .navbar ul {
@@ -141,8 +140,8 @@
 
 <body>
     <div class="container">
-
         <div class="snow"></div>
+
         <div class="navbar">
             <div class="logo">
                 <p>Axolsior</p>
@@ -161,6 +160,7 @@
         </div>
 
 
+
         <footer>
             <div class="montain"></div>
         </footer>
@@ -170,7 +170,7 @@
 
     <script>
         function snow() {
-            let amount = 50;
+            let amount = 100;
             let body = document.querySelector('.snow');
             let i = 0;
             while (i < amount) {
@@ -179,12 +179,12 @@
                 let size = Math.random() * 5;
                 let posX = Math.floor(Math.random() * window.innerWidth);
                 let delay = Math.random() * -20;
-                let duration = Math.random() * 20;
+                // let duration = Math.random(50) * 100;
 
-                drop.style.width = 30 + 'px';
+                drop.style.width = 10 + 'px';
                 drop.style.left = posX + 'px';
                 drop.style.animationDelay = delay + 's';
-                drop.style.animationDuration = 1 + duration + 's';
+                drop.style.animationDuration = 30 + 's';
                 body.appendChild(drop);
                 i++
             }
