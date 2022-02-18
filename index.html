@@ -22,19 +22,55 @@
     }
     
     body {
-        background: #82ADC6;
+        background: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    /*===== snow =====*/
+    /* .snow {
+        border: solid;
+    } */
+    
+    i {
+        position: absolute;
+        background: white;
+        height: 30px;
+        border-radius: 50%;
+        top: 0px;
+        animation: snow 10s linear infinite;
         width: 100%;
+        opacity: 0.2;
+    }
+    
+    @keyframes snow {
+        0% {
+            transform: translateY(-200px);
+        }
+        100% {
+            transform: translateY(calc(100vh + 200px));
+        }
+    }
+    
+    .container {
+        width: 1550px;
         height: 100vh;
         overflow: hidden;
         display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
         /* border: red solid; */
+        background-color: #82ADC6;
+        z-index: -9999;
     }
     
-    body img {
+    #mtb {
         bottom: 0;
         position: absolute;
         width: 1550px;
-        z-index: -1;
+        /* z-index: -1; */
     }
     /*===== Scroll bar =====*/
     
@@ -80,31 +116,81 @@
         color: white;
     }
     /*===== Home =====*/
+    /*===== footer =====*/
+    
+    footer {
+        position: absolute;
+        width: 1550px;
+        bottom: 0;
+        min-height: 450px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: red solid; */
+    }
+    
+    footer .montain {
+        position: absolute;
+        background: url(/pict/Montain.png);
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
 </style>
 
 <body>
+    <div class="container">
 
-    <div class="navbar">
-        <div class="logo">
-            <p>Axolsior</p>
+        <div class="snow"></div>
+        <div class="navbar">
+            <div class="logo">
+                <p>Axolsior</p>
+            </div>
+            <ul>
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="">Projects</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+            </ul>
         </div>
-        <ul>
-            <li>
-                <a href="">Home</a>
-            </li>
-            <li>
-                <a href="">Projects</a>
-            </li>
-            <li>
-                <a href="">Contact</a>
-            </li>
-        </ul>
+
+
+        <footer>
+            <div class="montain"></div>
+        </footer>
+
+
     </div>
 
-    <section class="home" id="home">
-    </section>
+    <script>
+        function snow() {
+            let amount = 50;
+            let body = document.querySelector('.snow');
+            let i = 0;
+            while (i < amount) {
+                let drop = document.createElement('i');
 
-    <img src="/pict/Montain.png" alt="">
+                let size = Math.random() * 5;
+                let posX = Math.floor(Math.random() * window.innerWidth);
+                let delay = Math.random() * -20;
+                let duration = Math.random() * 20;
+
+                drop.style.width = 30 + 'px';
+                drop.style.left = posX + 'px';
+                drop.style.animationDelay = delay + 's';
+                drop.style.animationDuration = 1 + duration + 's';
+                body.appendChild(drop);
+                i++
+            }
+        }
+        snow();
+    </script>
 </body>
 
 </html>
